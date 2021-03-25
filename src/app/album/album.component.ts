@@ -1,66 +1,40 @@
 import { Component, OnInit } from '@angular/core';
-import * as data from '../data/SearchResultsAlbum.json';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
+import { MusicDataService } from '../music-data.service';
 
-// class Artist{
-//   external_urls: {};
-//   href: string;
-//   id: string;
-//   name: string;
-//   type: string;
-//   uri: string;
-// }
-// class Image{
-//   height: number;
-//   url: string;
-//   width: number;
-// }
-// class Copyright{
-//   text: string;
-//   type: string;
-// }
-
-// class Tracks{
-//   href: string;
-//   items: [];
-//   limit: number;
-//   next: any;
-//   offset: number;
-//   previous: any;
-//   total: number;
-// }
-// class Album{
-//   album_type: string;
-//   artists: Array<Artist>;
-//   copyrights: Array<Copyright>;
-//   external_ids: {};
-//   external_urls: {};
-//   genres: [];
-//   href: string;
-//   id: string;
-//   images: Array<Image>;
-//   label: string;
-//   name: string;
-//   popularity: number;
-//   release_date: Date;
-//   release_date_precision: string;
-//   total_tracks: number;
-//   tracks: Tracks;
-//   type: string;
-//   uri: string;
-  
-// }
 @Component({
   selector: 'app-album',
   templateUrl: './album.component.html',
   styleUrls: ['./album.component.css']
 })
+
+
 export class AlbumComponent implements OnInit {
 
-  constructor() { }
-
+  routeSub: any;
   album: any;
+  albumSub: any;
+
+  constructor(private matSnackBar: MatSnackBar, private route: ActivatedRoute, private musicData: MusicDataService) { }
+
+ 
   ngOnInit(): void {
-    this.album = (data as any).default;
+    this.routeSub = this.route.params.subscribe(params=>{
+      this.albumSub = this.musicData.getAlbumById(params.id).subscribe(albumData=>this.album = albumData);
+    })
+  }
+
+  ngOnDestroy(): void{
+    this.albumSub.unsubscribe();
+    this.routeSub.unsubscribe();
+  }
+
+  addToFavourites(trackID): void {
+    var result = this.musicData.addToFavourites(trackID);
+    if(result === true){
+      this.matSnackBar.open("Adding to Favourites...", "Done", { duration: 1500 });
+    }
   }
 
 }

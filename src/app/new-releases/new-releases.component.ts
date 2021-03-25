@@ -1,35 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import * as data from '../data/NewReleasesAlbums.json';
+import { MusicDataService } from '../music-data.service';
 
-// class Artist{
-//   external_urls: {};
-//   href: string;
-//   id: string;
-//   name: string;
-//   type: string;
-//   uri: string;
-// }
-// class Image{
-//   height: number;
-//   url: string;
-//   width: number;
-// }
-// class Release{
-//   album_type: string;
-//   artists: Array<Artist>;
-//   available_markets: Array<string>;
-//   external_urls: {};
-//   href: string;
-//   id: string;
-//   images: Array<Image>;
-//   name: string;
-//   release_date: string;
-//   release_date_precision: string;
-//   total_tracks: number;
-//   type: string;
-//   uri: string;
-
-// }
 
 @Component({
   selector: 'app-new-releases',
@@ -39,12 +10,17 @@ import * as data from '../data/NewReleasesAlbums.json';
 export class NewReleasesComponent implements OnInit {
   
   releases: any;
+  releaseSub: any;
 
-  constructor() { }
+  constructor(private musicData: MusicDataService) { }
 
 
   ngOnInit(): void {
-    this.releases = data.albums.items;
+    this.releaseSub = this.musicData.getNewReleases().subscribe(data => this.releases = data.albums.items);
+  }
+
+  ngOnDestroy(): void{
+    this.releaseSub.unsubscribe();
   }
 
 }

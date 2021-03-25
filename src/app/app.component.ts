@@ -1,9 +1,9 @@
 /********************************************************************************* 
- * * WEB422 – Assignment 04 
+ * * WEB422 – Assignment 05 
  * * I declare that this assignment is my own work in accordance with Seneca Academic Policy. 
  * * No part of this assignment has been copied manually or electronically from any other source 
  * * (including web sites) or distributed to other students. 
- * * * Name: _Shamima Rahman_ Student ID: _154321194___ Date: _5th March 2021__ 
+ * * * Name: _Shamima Rahman_ Student ID: _154321194___ Date: _24th March 2021_
  * 
  * 
  * * * ********************************************************************************/
@@ -11,6 +11,9 @@
 
 
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -19,4 +22,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'web422-a4';
+  searchString: string;
+
+  constructor( private route: ActivatedRoute, private router: Router ){}
+
+  handleSearch(){
+    this.router.navigate(['/search'], { queryParams: { q: this.searchString} });
+  }
+
+
 }
