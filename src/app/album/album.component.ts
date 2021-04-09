@@ -31,10 +31,14 @@ export class AlbumComponent implements OnInit {
   }
 
   addToFavourites(trackID): void {
-    var result = this.musicData.addToFavourites(trackID);
-    if(result === true){
-      this.matSnackBar.open("Adding to Favourites...", "Done", { duration: 1500 });
-    }
+    var result = this.musicData.addToFavourites(trackID).subscribe(
+      success=>{
+        this.matSnackBar.open("Adding to Favourites...", "Done", { duration: 1500 });
+      },
+      err=>{
+        this.matSnackBar.open("Unable to add song to Favourites", "Done", { duration: 1500 });
+      }
+    );
   }
 
 }
