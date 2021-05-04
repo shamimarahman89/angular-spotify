@@ -7,8 +7,7 @@
 
 ## Live Website Link
 
-You can visit the website live using the following link:
-<http://angular-spotify-git-main-shamimarahman89.vercel.app/>
+You can visit the website live using the following link: <http://angular-spotify-git-main-shamimarahman89.vercel.app/>.
 If you are visiting for the first time you need to register. Once the registration is successful you can login and browse different fuctionalities.
 
 ## Technical Environment: 
