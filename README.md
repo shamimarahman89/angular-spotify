@@ -1,6 +1,13 @@
-# Web422A4
+# Angular Spotify
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
+* A fully functional website like Spotify made with Angular that shows new album releases, albums filtered by artists, album details with list of tracks with search capabilities. 
+* The web component consumes Spotify’s developer APIs to display the data. 
+* Fully functional user management using self-developed user API having capability of registering users, user login and logout, managing session and maintaining list of users’ favorite tracks
+* This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
+
+# Technical Environment: 
+
+Angular, Express, Node.js, MongoDB, REST API, HTML, CSS, Git, GitHub, Vercel, Heroku
 
 ## Development server
 

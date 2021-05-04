@@ -1,15 +1,3 @@
-/********************************************************************************* 
- * * WEB422 – Assignment 06 
- * * I declare that this assignment is my own work in accordance with Seneca Academic Policy. 
- * * No part of this assignment has been copied manually or electronically from any other source 
- * * (including web sites) or distributed to other students. 
- * * * Name: _Shamima Rahman_ Student ID: _154321194___ Date: _8th April 2021_
- * 
- * Online Link: _______________________________________________________________
- * 
- * * * ********************************************************************************/
-
-
 
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
@@ -24,7 +12,7 @@ import { AuthService } from './auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'web422-a6';
+  title = 'Angular Spotify';
   searchString: string;
   public token: any;
 
