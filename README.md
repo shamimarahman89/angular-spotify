@@ -5,6 +5,12 @@
 * Fully functional user management using self-developed user API having capability of registering users, user login and logout, managing session and maintaining list of users’ favorite tracks. Backend code can be found here: <https://github.com/shamimarahman89/user-api>
 * This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
 
+## Live Website Link
+
+You can visit the website live using the following link:
+<http://angular-spotify-git-main-shamimarahman89.vercel.app/>
+If you are visiting for the first time you need to register. Once the registration is successful you can login and browse different fuctionalities.
+
 ## Technical Environment: 
 
 Angular, Express, Node.js, MongoDB, REST API, HTML, CSS, Git, GitHub, Vercel, Heroku
