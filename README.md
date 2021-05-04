@@ -5,7 +5,7 @@
 * Fully functional user management using self-developed user API having capability of registering users, user login and logout, managing session and maintaining list of users’ favorite tracks
 * This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
 
-# Technical Environment: 
+## Technical Environment: 
 
 Angular, Express, Node.js, MongoDB, REST API, HTML, CSS, Git, GitHub, Vercel, Heroku
 
