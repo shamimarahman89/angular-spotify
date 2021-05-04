@@ -2,7 +2,7 @@
 
 * A fully functional website like Spotify made with Angular that shows new album releases, albums filtered by artists, album details with list of tracks with search capabilities. 
 * The web component consumes Spotify’s developer APIs to display the data. 
-* Fully functional user management using self-developed user API having capability of registering users, user login and logout, managing session and maintaining list of users’ favorite tracks
+* Fully functional user management using self-developed user API having capability of registering users, user login and logout, managing session and maintaining list of users’ favorite tracks. Backend code can be found here: <https://github.com/shamimarahman89/user-api>
 * This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
 
 ## Technical Environment: 
